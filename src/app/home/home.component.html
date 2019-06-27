@@ -1,0 +1,43 @@
+<section class="content-header">
+  <app-headerbed></app-headerbed>
+</section>
+
+<section class="content">
+  <div class="row">
+    <div class="layout-dashboard vert-move" style="position: absolute;
+        left: 0px;
+        top: 0px;
+        z-index: -1; 
+        margin-top: 150px;">
+
+      <div class="col-md-6 col-xs-12" *ngFor="let item of dataKamar" style="margin-top:5px">
+        <div class="overview-box {{item.warna}}"><i class="overview-icon fa fa-bed"></i>
+          <span class="overview-title">{{item.namaruangan}}</span>
+          <!-- <i class="overview-arrow pi pi-chevron-circle-up"></i> -->
+          <div class="overview-subinfo" *ngFor="let data of item.kamar">
+            <!-- {{data.namakelas}} : Tersedia {{data.kosong}} Dari {{data.qtyBed}} -->
+            <p-table>
+                <ng-template pTemplate="header">
+                    <tr>
+                      <th style="font-size: 18px">
+                          {{data.namakelas}}
+                      </th>
+                      <th style="font-size: 18px">
+                          Tersedia {{data.kosong}} Dari {{data.qtyBed}}
+                      </th>
+                    </tr>
+                  </ng-template>      
+            </p-table>            
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+<!-- <span class="overview-title">{{item.namaruangan}}</span>
+          <i class="overview-arrow pi pi-chevron-circle-up"></i>
+          <div class="overview-subinfo" *ngFor="let data of item.kamar">{{data.namakelas}} : Tersedia {{data.kosong}}
+            Dari {{data.qtyBed}}</div> -->
